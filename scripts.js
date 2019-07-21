@@ -21,19 +21,9 @@ For example, the following tree has 5 unival subtrees:
 
 */
 
-/* problem reworded:??
-We note that a 'regular' binary tree doesn't have the nodes equal the same value:
+//We note that what it is really asking for is how many nodes are where the left and right are both defined as 'none'.  If you count the entire tree itself as a subtree, then the answer is how many end nodes there are plus one.
 
-  8
- / \
-6   7
-   / \
-  2   5
- / \
-1   3
-
-Also, the left child is the smaller number.  The above binary tree can be represented in Javascript as:
-*/
+let count = 0;
 
 class myNode {
   constructor (value, left='none', right='none') {
@@ -41,17 +31,24 @@ class myNode {
     this.left = left;
     this.right = right;
   }
+
+  subtrees() {
+    if (this.left =='none' && this.right == 'none') {
+      count++;
+      console.log('true = ', count)
+    } else {
+      this.left.subtrees();
+      this.right.subtrees();
+    }
+    return count+1;
+  }
+
+  resetCount() {
+    count = 0;
+    console.log('this.count =', count);
+    return true;
+  }
 }
-
-const node3 = new myNode(3);
-const node1 = new myNode(1);
-const node2 = new myNode(2, node1, node3);
-const node5 = new myNode(5);
-const node7 = new myNode(7, node2, node5);
-const node6 = new myNode(6);
-const binroot = new myNode(8, node6, node7);
-
-//suppose we do the same for the unival tree:
 
 const root_right_left_left = new myNode(1);
 const root_right_left_right = new myNode(1);
@@ -59,13 +56,10 @@ const root_right_left = new myNode(1, root_right_left_left, root_right_left_righ
 const root_right_right = new myNode(0);
 const root_left = new myNode(1);
 const root_right = new myNode(0, root_right_left, root_right_right);
-const root = new myNode(0, root_left, root_right);
-
-//We note that what it is really asking for is how many nodes are where the left and right are both defined as 'none'.
+const root = new myNode(0, root_left, root_right); //Example tree
 
 $(document).ready(function() {
-  $('#output-section-1').text(1);
-  $('#output-section-2').text(2);
-  $('#output-section-3').text(3);
-  $('#output-section-4').text(4);
+  $('#output-section-1').text(JSON.stringify(root));
+  $('#output-section-2').text(root.subtrees());
+  root.resetCount();
   });
