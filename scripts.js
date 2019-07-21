@@ -31,22 +31,23 @@ We note that a 'regular' binary tree doesn't have the nodes equal the same value
 1   3
 
 Also, the left child is the smaller number.  The above binary tree can be represented in Javascript as:
-*/.\
+*/
 
 class myNode {
-  constructor (left='none', right='none') {
+  constructor (value, left='none', right='none') {
+    this.value = value;
     this.left = left;
     this.right = right;
   }
 }
 
-const node3 = new myNode();
-const node1 = new myNode();
-const node2 = new myNode(node1, node3);
-const node5 = new myNode();
-const node7 = new myNode(node2, node5);
-const node6 = new myNode();
-const node8 = new myNode(node6,node7);
+const node3 = new myNode(3);
+const node1 = new myNode(1);
+const node2 = new myNode(2, node1, node3);
+const node5 = new myNode(5);
+const node7 = new myNode(7, node2, node5);
+const node6 = new myNode(6);
+const node8 = new myNode(8, node6,node7);
 
 
 $(document).ready(function() {
