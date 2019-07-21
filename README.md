@@ -1,6 +1,6 @@
 # Daily Coding Problem 2019-07-20
 
-####  _ Good morning! Here's your coding interview problem for today._
+####  _Good morning! Here's your coding interview problem for today._
 
 _This problem was asked by Google._
 
