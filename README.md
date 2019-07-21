@@ -2,12 +2,12 @@
 
 ####  _ Good morning! Here's your coding interview problem for today._
 
-_This problem was asked by Google.
+_This problem was asked by Google._
 
-A unival tree (which stands for "universal value") is a tree where all nodes under it have the same value.
+_A unival tree (which stands for "universal value") is a tree where all nodes under it have the same value._
 
-Given the root to a binary tree, count the number of unival subtrees.
+_Given the root to a binary tree, count the number of unival subtrees._
 
-For example, the following tree has 5 unival subtrees:_
+_For example, the following tree has 5 unival subtrees:_
 
 ![](example.png)
