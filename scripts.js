@@ -19,6 +19,35 @@ For example, the following tree has 5 unival subtrees:
 
 */
 
+/* problem reworded:??
+We note that a 'regular' binary tree doesn't have the nodes equal the same value:
+
+  8
+ / \
+6   7
+   / \
+  2   5
+ / \
+1   3
+
+Also, the left child is the smaller number.  The above binary tree can be represented in Javascript as:
+*/.\
+
+class myNode {
+  constructor (left='none', right='none') {
+    this.left = left;
+    this.right = right;
+  }
+}
+
+const node3 = new myNode();
+const node1 = new myNode();
+const node2 = new myNode(node1, node3);
+const node5 = new myNode();
+const node7 = new myNode(node2, node5);
+const node6 = new myNode();
+const node8 = new myNode(node6,node7);
+
 
 $(document).ready(function() {
   $('#output-section-1').text(1);
